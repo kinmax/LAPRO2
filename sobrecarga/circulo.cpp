@@ -102,11 +102,39 @@ void circulo::imprime_area ()
 	cout << "Área: " << area << endl;
 }
 
+void circulo::set_rest()
+{
+	area = PI * raio * raio;
+	circunferencia  = PI * raio * 2;
+}
+
 string circulo::toString()
 {
-	
-  return 0;
-	 
-	return s;
-	
+	stringstream tmpss;
+	string tmpstr;
+
+	tmpss << "Centro X: " << this->centroX << " Centro Y: " << this->centroY << " Raio: " << this->raio;
+	tmpss >> tmpstr;
+}
+
+bool circulo::operator^(circulo &c1)
+{
+}
+
+bool circulo::operator>(circulo &c1)
+{
+	if (area > c1.get_area())
+	{
+		return true;
+	}
+	return false;
+}
+
+bool circulo::operator<(circulo &c1)
+{
+	if (area < c1.get_area())
+	{
+		return true;
+	}
+	return false;
 }

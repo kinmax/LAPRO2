@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+#include <cstdlib>
+#include <sstream>
 using namespace std;
 
 class circulo
@@ -27,7 +29,12 @@ class circulo
 		void imprime_raio();
 		void imprime_centro();
 		void imprime_area();
+		void set_rest();
 		string toString();
+		bool operator^(circulo &c1);
+		bool operator>(circulo &c1);
+		bool operator<(circulo &c1);
+		
 };
 
 #endif
