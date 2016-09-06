@@ -119,6 +119,16 @@ string circulo::toString()
 
 bool circulo::operator^(circulo &c1)
 {
+	float dist;
+	dist = sqrtf(
+                      powf( (c1.get_centroX() - centroX ) ,  2.0f ) + 
+                      powf( (c1.get_centroY() - centroY ) ,  2.0f )
+                );
+	if (dist > (raio + c1.get_raio()))
+	{
+		return false;
+	}
+	return true;
 }
 
 bool circulo::operator>(circulo &c1)
