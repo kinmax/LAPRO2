@@ -1,50 +1,105 @@
 #include "inteiro.h"
 #include <iostream>
+#include <stdlib.h>
 
 using namespace std;
 
 int main(){
 
-  inteiro *p, *paux, *pant, *no, n;
-  p=NULL;
+	inteiro *p, *paux, *tmp, *no, *pant;
+	int n;
+	bool achei = false;
 
 	p = new inteiro();
  	paux = new inteiro();
-	pant = new inteiro();
 	p->valor = 10;
-	paux = pant = p;
-	i = 0;
-	while(i != -1)
+	paux = p;
+	n = 0;
+	while(1)
 	{
 		paux = p;		
-		cout << "Digite o numero a ser inserido, -1 para encerrar" << endl;
+		cout << "Digite o número a ser inserido, -1 para encerrar" << endl;
 		cin >> n;
-]		while(paux->prox != NULL || paux->valor < n)
+		if (n == -1)
 		{
-			pant = paux;			
+			break;
+		}
+		while (paux != NULL)
+		{
+			if (paux->valor == n)
+			{
+				achei = true;
+			}
 			paux = paux->prox;
 		}
-		no = new inteiro();
-		no->valor = n;
-		no->prox = paux;
-		pant->prox = no;
+		paux = p;
+		if (achei == true)
+		{
+			no = p;
+			pant = new inteiro();			
+			while (no->valor != n)
+			{
+				pant = no;				
+				no = no->prox;
+			}
+			tmp = no->prox;
+			pant->prox = tmp;
+			no->prox = NULL;
+            delete(no);
+		}
+		else
+		{
+			if (p->valor > n)
+			{
+				tmp = new inteiro();
+				tmp->valor = n;
+				tmp->prox = p;
+				p = tmp;
+			}
+
+			else
+			{
+				while(1)
+				{ 
+					if ((paux->prox != NULL) && (paux->prox->valor > n))
+					{
+						tmp = new inteiro();
+						tmp->valor = n;
+						tmp->prox = paux->prox;
+						paux->prox = tmp;
+						break;
+					}
+					else
+					{ 
+						if (paux->prox == NULL)
+						{
+							paux->prox = new inteiro();
+							paux = paux->prox;
+							paux->valor = n;
+							break;	
+						}
+						else
+						{
+							paux = paux->prox;
+						}
+					}
+				}
+			}
+		}
+		
+
 	}
-	paux = p;
-	while (paux != NULL)
+
+	paux=p;
+	while(paux!=NULL)
 	{
-		cout << paux->valor << endl;
+    	cout << "Paux->valor = " << paux->valor << endl;
+    	paux=paux->prox;
+        delete p;
+        p=paux;
 	}
-	
 
-  paux=p;
-  while(paux!=NULL){
-    cout << "Paux->valor == " << paux->valor << endl;
-    paux=paux->prox;
-    delete p;
-    p=paux;
-  }
-
-  return 0;
+	return 0;
 }
 
 
