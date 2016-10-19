@@ -5,13 +5,15 @@ Roda::Roda()
 	material = "NULL";
 	fabricante = "NULL";
 	aro = 0;
+	raio = 0;
 }
 
-Roda::Roda(string _material, string _fabricante, int _aro)
+Roda::Roda(string _material, string _fabricante, int _aro, double _raio)
 {
 	material = _material;
 	fabricante = _fabricante;
 	aro = _aro;
+	raio = _raio;
 }
 
 string Roda::get_material()

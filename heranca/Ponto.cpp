@@ -42,7 +42,7 @@ double Ponto::calc_dist(Ponto p2)
 {
 	double a, b;
 	a = abs(x - p2.get_x());
-	b = abs(y - p2.get_y())
+	b = abs(y - p2.get_y());
 	return sqrt (pow(a, 2.0) + pow(b, 2.0)); 
 }
 

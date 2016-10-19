@@ -12,14 +12,14 @@ using namespace std;
 class Ponto;
 class Circulo;
 
-class Roda
+class Roda : Circulo
 {
 	protected:
 		string material, fabricante;
 		int aro;
 	public:
 		Roda();
-		Roda(string _material, string _fabricante, int _aro);
+		Roda(string _material, string _fabricante, int _aro, double _raio);
 		string get_material();
 		string get_fabricante();
 		int get_aro();
