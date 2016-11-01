@@ -67,3 +67,13 @@ void Turma::set_horario(vector<string> _horario)
 {
 	horario = _horario;
 }
+
+void Turma::insere_diaSemana(int _dia, vector<int> v)
+{
+	v.push_back(_dia);
+}
+
+void Turma::insere_horario(string _horario, vector<string> v)
+{
+	v.push_back(_horario);
+}

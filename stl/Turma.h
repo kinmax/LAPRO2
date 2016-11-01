@@ -16,6 +16,7 @@ class Turma
 		vector<string> horario;
 	public:
 		Turma();
+		Turma(string _codigo, string _creditos, string _nome, string _turma);
 		~Turma();
 		string get_codigo();
 		string get_creditos();
@@ -29,6 +30,8 @@ class Turma
 		void set_turma(string _turma);
 		void set_diaSemana(vector<int> _diaSemana);
 		void set_horario(vector<string> _horario);
+		void insere_diaSemana(int _dia, vector<int> v);
+		void insere_horario(string _horario, vector<string> v);
 };
 #endif
 

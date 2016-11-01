@@ -17,60 +17,29 @@ bool ordena_por_nome(Turma A, Turma B)
 int main (void)
 {
 	list<Turma> turmas;
-	std::list<Turma>::iterator k;
-	Turma t1, t2, t3;
+	list<Turma>::iterator k;
+	string code, cred, name, group;
+	Turma *t;
 	vector<int> semana;
 	vector<string> horario;
+
+	int op = 1;
+	while(op != 0)
+	{
+		cout << "Digite o código da turma: " << endl;
+		cin >> code;
+		cout << "Digite o número de créditos semanais da turma: " << endl;
+		cin >> cred;
+		cout << "Digite o nome da turma: " << endl;
+		cin >> name;
+		cout << "Digite o número da turma: " << endl;
+		cin >> group;
+		t = new Turma(code, cred, name, group);
+		cout << "Digite os horários da turma (AB, CD, NP, JK, etc.): " << endl;
+		
+	}
 	
-	t1.set_codigo("740.42");
-	t1.set_creditos("4");
-	t1.set_nome("Turma 1");
-	t1.set_turma("590");
-
-	semana.push_back(2);
-	semana.push_back(5);
-
-	horario.push_back("AB");
-	horario.push_back("AB");
-	
-	t1.set_horario(horario);
-	t1.set_diaSemana(semana);
-
-	turmas.push_back(t1);
-
-	t2.set_codigo("65876854");
-	t2.set_creditos("92");
-	t2.set_nome("Turma 2");
-	t2.set_turma("600");
-
-	semana.push_back(3);
-	semana.push_back(4);
-
-	horario.push_back("CD");
-	horario.push_back("CD");
-	
-	t2.set_horario(horario);
-	t2.set_diaSemana(semana);
-
-	turmas.push_back(t2);
-
-	t3.set_codigo("7895");
-	t3.set_creditos("7");
-	t3.set_nome("Turma 0");
-	t3.set_turma("752");
-
-	semana.push_back(8);
-	semana.push_back(7);
-
-	horario.push_back("NP");
-	horario.push_back("NP");
-	
-	t3.set_horario(horario);
-	t3.set_diaSemana(semana);
-
-	turmas.push_back(t3);
-	
-	sort(turmas.begin(), turmas.end(), ordena_por_nome);
+	//sort(turmas.begin(), turmas.end(), ordena_por_nome);
 
 	
 	
