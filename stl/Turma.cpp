@@ -4,6 +4,14 @@ Turma::Turma()
 {
 }
 
+Turma::Turma(string _codigo, string _creditos, string _nome, string _turma)
+{
+	codigo = _codigo;
+	creditos = _creditos;
+	nome = _nome;
+	turma = _turma;
+}
+
 Turma::~Turma()
 {
 }
@@ -68,12 +76,34 @@ void Turma::set_horario(vector<string> _horario)
 	horario = _horario;
 }
 
-void Turma::insere_diaSemana(int _dia, vector<int> v)
+void Turma::insere_diaSemana(int _dia)
 {
-	v.push_back(_dia);
+	diaSemana.push_back(_dia);
 }
 
-void Turma::insere_horario(string _horario, vector<string> v)
+void Turma::insere_horario(string _horario)
 {
-	v.push_back(_horario);
+	horario.push_back(_horario);
+}
+
+void Turma::exibir()
+{
+	vector<int>::iterator d;
+	vector<string>::iterator h;
+	cout << "Código da Turma: " << codigo << endl;
+	cout << "Nome da Turma: " << nome << endl;
+	cout << "Número da Turma: " << turma << endl;
+	cout << "Número de Créditos da Turma: " << creditos << endl;
+	cout << "Dias da semana em que a turma tem aula: ";
+	for(d = diaSemana.begin(); d != diaSemana.end(); d++)
+	{
+		cout << *d << " ";
+	}
+	cout << endl;
+	cout << "Horários em que a turma tem aula: ";
+	for(h = horario.begin(); h != horario.end(); h++)
+	{
+		cout << *h << " ";
+	}
+	cout << endl << "=================================================================" << endl;
 }

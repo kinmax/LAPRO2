@@ -30,8 +30,9 @@ class Turma
 		void set_turma(string _turma);
 		void set_diaSemana(vector<int> _diaSemana);
 		void set_horario(vector<string> _horario);
-		void insere_diaSemana(int _dia, vector<int> v);
-		void insere_horario(string _horario, vector<string> v);
+		void insere_diaSemana(int _dia);
+		void insere_horario(string _horario);
+		void exibir();
 };
 #endif
 
